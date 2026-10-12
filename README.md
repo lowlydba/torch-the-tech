@@ -187,7 +187,7 @@ flowchart TB
 
 ```mermaid
 ---
-title: "Personal admin and mobile: email, calendar, phone, carrier"
+title: "Personal admin and mobile: email, calendar, passwords, phone, carrier"
 config:
   theme: base
   themeVariables:
@@ -230,11 +230,16 @@ flowchart TB
             pmail[Proton Mail]
             pcal[Proton Calendar]
         end
+
+        subgraph bitwarden["Bitwarden: open source"]
+            bw[Password manager]
+        end
     end
 
     h_mobile ==> pihole
     pihole ==> google
     pihole --> proton
+    pihole --> bitwarden
 
     pixel -. "on cellular: bypasses filter" .-> fi
     gmail -. "mid-migration" .-> pmail
@@ -245,7 +250,7 @@ flowchart TB
     classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
     class gmail,gcal,gapps,fi big
-    class pmail,pcal hosted
+    class pmail,pcal,bw hosted
     class pixel big
     class pihole gate
     style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
@@ -255,9 +260,10 @@ flowchart TB
     style g_admin fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
     style g_mobile fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
     style proton fill:#fff3dc,stroke:#d98200,color:#222
+    style bitwarden fill:#fff3dc,stroke:#d98200,color:#222
 ```
 
 ## Notes
 
-- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton.
-- Next: search/browser, password manager, maps, photos, other SaaS.
+- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton, Bitwarden.
+- Next: search/browser, maps, photos, other SaaS.
