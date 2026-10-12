@@ -469,3 +469,7 @@ Providers and tools in the charts above that I trust and recommend.
 - [Resilio Sync](https://www.resilio.com/sync/): peer-to-peer file sync
 - [Plex](https://www.plex.tv) and [Plexamp](https://www.plex.tv/plexamp/): music server and player
 - [LiveBoat](https://github.com/lowlydba/liveboat): RSS reader on GitHub Pages
+
+---
+
+Thanks to [Mermaid](https://mermaid.js.org) for the diagrams and to the [lowly-writing-framework](https://github.com/lowlysre/lowly-writing-framework) skill for the writing structure.
