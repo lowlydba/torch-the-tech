@@ -188,6 +188,7 @@ flowchart TB
             iot_c[[IoT devices<br/>need internet]]
             ha --> iot_l
             ha --> iot_c
+            nest[[Google Nest Minis<br/>several]]
         end
 
         subgraph h_files["Files"]
@@ -200,6 +201,10 @@ flowchart TB
 
     subgraph out["UPSTREAM"]
         direction LR
+
+        subgraph google["Google"]
+            gcloud[Assistant + Nest cloud<br/>+ telemetry]
+        end
 
         subgraph vendors["IoT vendor clouds"]
             vcloud[Device clouds]
@@ -216,6 +221,7 @@ flowchart TB
 
     h_smart ==> pihole
     h_files --> pihole
+    pihole ==> google
     pihole ==> vendors
     pihole --> nabu
     pihole --> dropbox
@@ -226,7 +232,7 @@ flowchart TB
     classDef self fill:#dfd,stroke:#3a3,color:#040
     classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
-    class vcloud big
+    class vcloud,nest,gcloud big
     class nabucloud,dbx hosted
     class ha,iot_l,iot_c,resilio self
     class pihole gate
@@ -235,6 +241,7 @@ flowchart TB
     style h_smart fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
     style h_files fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
     style vendors fill:#fff0f0,stroke:#c33,color:#222
+    style google fill:#fff0f0,stroke:#c33,color:#222
     style nabu fill:#fff3dc,stroke:#d98200,color:#222
     style dropbox fill:#fff3dc,stroke:#d98200,color:#222
 ```
