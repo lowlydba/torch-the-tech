@@ -60,7 +60,7 @@ flowchart TB
     style edges fill:#fff,stroke:#999,color:#222
 ```
 
-## 1. Media and reading
+## 1. Media, reading and gaming
 
 ```mermaid
 ---
@@ -80,6 +80,7 @@ flowchart TB
             direction TB
             frame[[Smart TV]]
             plex[Plex + Plexamp<br/>music server]
+            switch2[[Nintendo Switch 2<br/>on wifi]]
         end
 
         subgraph h_reading["Reading"]
@@ -95,6 +96,7 @@ flowchart TB
 
     subgraph offline["OFF THE NETWORK"]
         bluray[[Blu-ray player<br/>+ disc catalog]]
+        snes[[SNES Classic]]
     end
 
     pihole[[Pi-hole<br/>DNS filter]]
@@ -109,6 +111,10 @@ flowchart TB
 
         subgraph netflix["Netflix"]
             nflx[Streaming]
+        end
+
+        subgraph nintendo["Nintendo"]
+            ncloud[Online services<br/>+ telemetry]
         end
 
         subgraph plexinc["Plex Inc"]
@@ -128,6 +134,7 @@ flowchart TB
     pihole -.-x blocked
     pihole --> samsung
     pihole ==> netflix
+    pihole --> nintendo
     pihole --> plexinc
     pihole --> github
 
@@ -137,10 +144,10 @@ flowchart TB
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
     classDef gone fill:#eee,stroke:#999,stroke-dasharray: 2 4,color:#777
     classDef note fill:#ffd,stroke:#cc3,stroke-dasharray: 4 3,color:#440
-    class scloud,nflx,hbo,plextv big
+    class scloud,nflx,hbo,plextv,ncloud,switch2 big
     class ghpages hosted
     class frame big
-    class plex,liveboat,bluray self
+    class plex,liveboat,bluray,snes self
     class pihole gate
     class feedly gone
     class blocked note
@@ -154,6 +161,7 @@ flowchart TB
     style netflix fill:#fff0f0,stroke:#c33,color:#222
     style hbo stroke-dasharray: 5 3
     style plexinc fill:#fff0f0,stroke:#c33,color:#222
+    style nintendo fill:#fff0f0,stroke:#c33,color:#222
     style github fill:#fff3dc,stroke:#d98200,color:#222
 ```
 
