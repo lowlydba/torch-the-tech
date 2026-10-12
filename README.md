@@ -93,7 +93,7 @@ flowchart TB
         hbo[HBO Max<br/>ending]
     end
 
-    subgraph offline["OFF THE NETWORK: no network"]
+    subgraph offline["OFF THE NETWORK"]
         bluray[[Blu-ray player<br/>+ disc catalog]]
     end
 
