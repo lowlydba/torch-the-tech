@@ -341,11 +341,9 @@ flowchart TB
     h_mobile ==> pihole
     h_desktop ==> pihole
     pihole ==> google
-    pihole --> proton
     pihole --> bitwarden
     pihole --> brave
     pihole --> msft
-    pihole -.-> ddg
     pihole ==> salesforce
 
     pixel -. "on cellular: bypasses filter" .-> fi
