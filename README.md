@@ -296,6 +296,10 @@ flowchart TB
         subgraph brave["Brave"]
             bravecloud[Browser services]
         end
+
+        subgraph msft["Microsoft"]
+            bing[Bing search<br/>paid via Rewards]
+        end
     end
 
     h_mobile ==> pihole
@@ -304,6 +308,7 @@ flowchart TB
     pihole --> proton
     pihole --> bitwarden
     pihole --> brave
+    pihole --> msft
 
     pixel -. "on cellular: bypasses filter" .-> fi
     gmail -. "mid-migration" .-> pmail
@@ -314,7 +319,7 @@ flowchart TB
     classDef self fill:#dfd,stroke:#3a3,color:#040
     classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
-    class gmail,gcal,gapps,fi,gphotos,chrome big
+    class gmail,gcal,gapps,fi,gphotos,chrome,bing big
     class pmail,pcal,bw,bravecloud,brave_m hosted
     class gallery self
     class pixel big
@@ -329,6 +334,7 @@ flowchart TB
     style proton fill:#fff3dc,stroke:#d98200,color:#222
     style bitwarden fill:#fff3dc,stroke:#d98200,color:#222
     style brave fill:#fff3dc,stroke:#d98200,color:#222
+    style msft fill:#fff0f0,stroke:#c33,color:#222
     style g_photos fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
 ```
 
@@ -401,7 +407,3 @@ flowchart TB
     style claude fill:#fff0f0,stroke:#c33,color:#222
     style proton fill:#fff3dc,stroke:#d98200,color:#222
 ```
-## Notes
-
-- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton (incl. Lumo), Bitwarden, Brave.
-- Next: search, maps, other SaaS.
