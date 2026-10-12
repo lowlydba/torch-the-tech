@@ -288,10 +288,6 @@ flowchart TB
         end
     end
 
-    subgraph retired["RETIRED: no traffic"]
-        gdrive[<s>Google Drive</s><br/>fully replaced]
-    end
-
     pihole[[Pi-hole<br/>DNS filter]]
 
     subgraph out["UPSTREAM"]
