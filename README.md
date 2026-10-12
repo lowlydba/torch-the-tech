@@ -472,4 +472,4 @@ Providers and tools in the charts above that I trust and recommend.
 
 ---
 
-Thanks to [Mermaid](https://mermaid.js.org) for the diagrams and to the [lowly-writing-framework](https://github.com/lowlysre/lowly-writing-framework) skill for the writing structure.
+Thanks to [Mermaid](https://mermaid.js.org) for the diagrams, [mermaid-cli](https://github.com/mermaid-js/mermaid-cli) for the preview renders, and the [lowly-writing-framework](https://github.com/lowlysre/lowly-writing-framework) skill for the writing structure.
