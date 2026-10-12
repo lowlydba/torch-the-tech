@@ -1,6 +1,6 @@
 # Big Tech exit map
 
-Three charts by domain. In each, my home is on top, a DNS filter sits in front of outbound traffic, and the upstream companies are below.
+Four charts by domain. In each, my home is on top, a DNS filter sits in front of outbound traffic, and the upstream companies are below.
 
 ## Legend
 
@@ -332,7 +332,76 @@ flowchart TB
     style g_photos fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
 ```
 
+## 4. AI and dev tools
+
+```mermaid
+---
+config:
+  theme: base
+  themeVariables:
+    textColor: '#222222'
+    titleColor: '#222222'
+    edgeLabelBackground: '#ffffff'
+    lineColor: '#888888'
+---
+flowchart TB
+    subgraph home["MY HOME NETWORK"]
+        direction LR
+
+        subgraph h_ai["AI"]
+            direction TB
+            localllm[Local LLM<br/>planned]
+        end
+
+        subgraph h_dev["Dev tools"]
+            direction TB
+            editor[Editor + CLI<br/>coding agents]
+        end
+    end
+
+    pihole[[Pi-hole<br/>DNS filter]]
+
+    subgraph out["UPSTREAM"]
+        direction LR
+
+        subgraph copilot["GitHub / Microsoft"]
+            gh[GitHub Copilot<br/>heavy use]
+        end
+
+        subgraph claude["Anthropic"]
+            cl[Claude models<br/>via Copilot]
+        end
+
+        subgraph proton["Proton"]
+            lumo[Lumo AI<br/>free tier, ad-hoc]
+        end
+    end
+
+    h_dev ==> pihole
+    pihole ==> copilot
+    pihole --> proton
+    gh --> cl
+
+    gh -. "replacing with, planned" .-> localllm
+
+    classDef big fill:#fdd,stroke:#c33,color:#400
+    classDef self fill:#dfd,stroke:#3a3,color:#040
+    classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
+    classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
+    class gh,cl big
+    class lumo hosted
+    class editor,localllm self
+    class pihole gate
+    style localllm stroke-dasharray: 5 3
+    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
+    style out fill:#fffafa,stroke:#c33,stroke-width:2px,color:#222
+    style h_ai fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style h_dev fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style copilot fill:#fff0f0,stroke:#c33,color:#222
+    style claude fill:#fff0f0,stroke:#c33,color:#222
+    style proton fill:#fff3dc,stroke:#d98200,color:#222
+```
 ## Notes
 
-- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton, Bitwarden, Brave.
+- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton (incl. Lumo), Bitwarden, Brave.
 - Next: search, maps, other SaaS.
