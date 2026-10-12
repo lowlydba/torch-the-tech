@@ -4,24 +4,73 @@ Three charts by domain. In each, my home is on top, a DNS filter sits in front o
 
 ## Legend
 
-- Double border = hardware, single border = software/service
-- Green = self-hosted by me, red = Big Tech (including their hardware on my network, like the smart TV and phone), orange = managed hosting/provider with negligible telemetry (a flavor of self-hosting), grey = retired
-- Thick arrow = steady traffic, thin arrow = light or filtered traffic
-- Dotted red = blocked, dotted green = replacement in progress, dashed red box = subscription ending (HBO Max)
-- Thick green box = fully offline, no network connection at all (Blu-ray player)
+
+```mermaid
+---
+config:
+  theme: base
+  themeVariables:
+    textColor: '#222222'
+    edgeLabelBackground: '#ffffff'
+    lineColor: '#888888'
+---
+flowchart TB
+    subgraph colors["Who runs it"]
+        direction LR
+        c1[Self-hosted<br/>by me]
+        c2[Managed provider,<br/>low telemetry]
+        c3[Big Tech, incl.<br/>their hardware]
+        c4[Retired]
+        c1 ~~~ c2 ~~~ c3 ~~~ c4
+    end
+
+    subgraph shapes["Shapes and borders"]
+        direction LR
+        s1[Software]
+        s2[[Hardware]]
+        s3[Subscription ending]
+        s4[Fully offline]
+        s1 ~~~ s2 ~~~ s3 ~~~ s4
+    end
+
+    subgraph edges["Arrows"]
+        direction LR
+        a1[ ] ==>|steady| a2[ ]
+        a3[ ] -->|light| a4[ ]
+        a5[ ] -.->|replacing| a6[ ]
+        a7[ ] -.-x|blocked| a8[ ]
+    end
+
+    classDef self fill:#dfd,stroke:#3a3,color:#040
+    classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
+    classDef big fill:#fdd,stroke:#c33,color:#400
+    classDef gone fill:#eee,stroke:#999,stroke-dasharray: 2 4,color:#777
+    classDef blank fill:none,stroke:none,color:#fff
+    class c1,s1,s2 self
+    class c2 hosted
+    class c3 big
+    class c4 gone
+    class s3 big
+    class s4 self
+    class a1,a2,a3,a4,a5,a6,a7,a8 blank
+    style s3 stroke-dasharray: 5 3
+    style s4 stroke-width:4px,stroke:#0a8a3a
+    style colors fill:#fff,stroke:#999,color:#222
+    style shapes fill:#fff,stroke:#999,color:#222
+    style edges fill:#fff,stroke:#999,color:#222
+```
 
 ## 1. Media and reading
 
 ```mermaid
 ---
-title: "Media and reading: TV, streaming, music, RSS"
 config:
   theme: base
   themeVariables:
     textColor: '#222222'
     titleColor: '#222222'
     edgeLabelBackground: '#ffffff'
-    lineColor: '#555555'
+    lineColor: '#888888'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
@@ -112,14 +161,13 @@ flowchart TB
 
 ```mermaid
 ---
-title: "Smart home and files: Home Assistant, IoT, sync, backups"
 config:
   theme: base
   themeVariables:
     textColor: '#222222'
     titleColor: '#222222'
     edgeLabelBackground: '#ffffff'
-    lineColor: '#555555'
+    lineColor: '#888888'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
@@ -187,14 +235,13 @@ flowchart TB
 
 ```mermaid
 ---
-title: "Personal admin and mobile: email, calendar, passwords, phone, carrier"
 config:
   theme: base
   themeVariables:
     textColor: '#222222'
     titleColor: '#222222'
     edgeLabelBackground: '#ffffff'
-    lineColor: '#555555'
+    lineColor: '#888888'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
