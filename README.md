@@ -97,6 +97,7 @@ flowchart TB
     subgraph offline["OFF THE NETWORK"]
         bluray[[Blu-ray player<br/>+ disc catalog]]
         snes[[SNES Classic]]
+        soundbar[[Soundbar]]
     end
 
     pihole[[Pi-hole<br/>DNS filter]]
@@ -147,7 +148,7 @@ flowchart TB
     class scloud,nflx,hbo,plextv,ncloud,switch2 big
     class ghpages hosted
     class frame big
-    class plex,liveboat,bluray,snes self
+    class plex,liveboat,bluray,snes,soundbar self
     class pihole gate
     class feedly gone
     class blocked note
