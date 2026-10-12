@@ -188,7 +188,7 @@ flowchart TB
             iot_c[[IoT devices<br/>need internet]]
             ha --> iot_l
             ha --> iot_c
-            nest[[Google Nest Minis<br/>several]]
+            nest[[Google Nest Minis]]
         end
 
         subgraph h_files["Files"]
