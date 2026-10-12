@@ -407,3 +407,23 @@ flowchart TB
     style claude fill:#fff0f0,stroke:#c33,color:#222
     style proton fill:#fff3dc,stroke:#d98200,color:#222
 ```
+
+## Appendix: projects worth supporting
+
+Providers and tools in the charts above that I trust and recommend.
+
+### Privacy-focused providers (orange)
+
+- [Proton](https://proton.me): Mail, Calendar, [Lumo AI](https://lumo.proton.me)
+- [Bitwarden](https://bitwarden.com): open source password manager
+- [Brave](https://brave.com): privacy-focused browser
+- [Nabu Casa](https://www.nabucasa.com): funds Home Assistant development
+- [GitHub Pages](https://pages.github.com): static hosting
+
+### Self-hosted stack (green)
+
+- [Home Assistant](https://www.home-assistant.io): local-first smart home
+- [Pi-hole](https://pi-hole.net): network-wide DNS filtering
+- [Resilio Sync](https://www.resilio.com/sync/): peer-to-peer file sync
+- [Plex](https://www.plex.tv) and [Plexamp](https://www.plex.tv/plexamp/): music server and player
+- [LiveBoat](https://github.com/lowlydba/liveboat): RSS reader on GitHub Pages
