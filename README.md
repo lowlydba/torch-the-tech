@@ -197,6 +197,10 @@ flowchart TB
         end
     end
 
+    subgraph retired["RETIRED: no traffic"]
+        gdrive[<s>Google Drive</s><br/>fully replaced]
+    end
+
     pihole[[Pi-hole<br/>DNS filter]]
 
     subgraph out["UPSTREAM"]
@@ -227,12 +231,15 @@ flowchart TB
     pihole --> dropbox
 
     dbx -. "all other files replaced" .-> resilio
+    gdrive == "100% migrated" ==> resilio
 
     classDef big fill:#fdd,stroke:#c33,color:#400
     classDef self fill:#dfd,stroke:#3a3,color:#040
     classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
+    classDef gone fill:#eee,stroke:#999,stroke-dasharray: 2 4,color:#777
     class vcloud,nest,gcloud big
+    class gdrive gone
     class nabucloud,dbx hosted
     class ha,iot_l,iot_c,resilio self
     class pihole gate
@@ -241,6 +248,7 @@ flowchart TB
     style h_smart fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
     style h_files fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
     style vendors fill:#fff0f0,stroke:#c33,color:#222
+    style retired fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
     style google fill:#fff0f0,stroke:#c33,color:#222
     style nabu fill:#fff3dc,stroke:#d98200,color:#222
     style dropbox fill:#fff3dc,stroke:#d98200,color:#222
@@ -278,6 +286,10 @@ flowchart TB
             direction TB
             chrome[Chrome desktop]
         end
+    end
+
+    subgraph retired["RETIRED: no traffic"]
+        gdrive[<s>Google Drive</s><br/>fully replaced]
     end
 
     pihole[[Pi-hole<br/>DNS filter]]
