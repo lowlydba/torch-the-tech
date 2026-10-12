@@ -1,13 +1,13 @@
-# Big Tech exit map (draft v7)
+# Big Tech exit map
 
-Three charts by domain. In each, my home is on top, the Pi-hole is the choke point for all outbound traffic, and the upstream companies are below.
+Three charts by domain. In each, my home is on top, a DNS filter sits in front of outbound traffic, and the upstream companies are below.
 
 ## Legend
 
 - Double border = hardware, single border = software/service
-- Green = self-hosted by me, red = Big Tech (including their hardware on my network, like the Frame TV and Pixel), orange = managed hosting/provider with negligible telemetry (a flavor of self-hosting), grey = retired
+- Green = self-hosted by me, red = Big Tech (including their hardware on my network, like the smart TV and phone), orange = managed hosting/provider with negligible telemetry (a flavor of self-hosting), grey = retired
 - Thick arrow = steady traffic, thin arrow = light or filtered traffic
-- Dotted red = blocked, dotted green = replacement in progress, dashed red box = subscription ending (HBO Max, Nov 1)
+- Dotted red = blocked, dotted green = replacement in progress, dashed red box = subscription ending (HBO Max)
 - Thick green box = fully offline, no network connection at all (Blu-ray player)
 
 ## 1. Media and reading
@@ -22,7 +22,7 @@ flowchart TB
 
         subgraph h_media["Media"]
             direction TB
-            frame[[Samsung Frame TV]]
+            frame[[Smart TV]]
             plex[Plex + Plexamp<br/>music server]
         end
 
@@ -34,14 +34,14 @@ flowchart TB
 
     subgraph retired["RETIRED / RETIRING: no traffic"]
         feedly[<s>Feedly</s><br/>fully replaced]
-        hbo[HBO Max<br/>expires Nov 1]
+        hbo[HBO Max<br/>ending]
     end
 
-    subgraph offline["OFF THE NETWORK: no wifi, no ethernet"]
-        bluray[[Blu-ray player<br/>+ disc catalog, in progress]]
+    subgraph offline["OFF THE NETWORK: no network"]
+        bluray[[Blu-ray player<br/>+ disc catalog]]
     end
 
-    pihole[[Pi-hole<br/>DNS filter for all outbound traffic]]
+    pihole[[Pi-hole<br/>DNS filter]]
     blocked[(Blocked:<br/>telemetry, ads, trackers)]
 
     subgraph out["UPSTREAM"]
@@ -114,19 +114,19 @@ flowchart TB
         subgraph h_smart["Smart home"]
             direction TB
             ha[Home Assistant<br/>local-first]
-            iot_l[[IoT devices: ~30%<br/>local only]]
-            iot_c[[IoT devices: ~70%<br/>need internet]]
+            iot_l[[IoT devices<br/>local only]]
+            iot_c[[IoT devices<br/>need internet]]
             ha --> iot_l
             ha --> iot_c
         end
 
         subgraph h_files["Files"]
             direction TB
-            resilio[Resilio Sync<br/>3 nodes]
+            resilio[Resilio Sync<br/>multi-node]
         end
     end
 
-    pihole[[Pi-hole<br/>DNS filter for all outbound traffic]]
+    pihole[[Pi-hole<br/>DNS filter]]
 
     subgraph out["UPSTREAM"]
         direction LR
@@ -181,11 +181,11 @@ flowchart TB
 
         subgraph h_mobile["Mobile"]
             direction TB
-            pixel[[Pixel phone<br/>on wifi]]
+            pixel[[Smartphone<br/>on wifi]]
         end
     end
 
-    pihole[[Pi-hole<br/>DNS filter for all outbound traffic]]
+    pihole[[Pi-hole<br/>DNS filter]]
 
     subgraph out["UPSTREAM"]
         direction LR
@@ -215,7 +215,7 @@ flowchart TB
     pihole ==> google
     pihole --> proton
 
-    pixel -. "on cellular: bypasses Pi-hole" .-> fi
+    pixel -. "on cellular: bypasses filter" .-> fi
     gmail -. "mid-migration" .-> pmail
     gcal -. "mid-migration" .-> pcal
 
@@ -238,6 +238,5 @@ flowchart TB
 
 ## Notes
 
-- Assumption: Google Fi on cellular skips Pi-hole. Delete that dotted edge if the phone always tunnels home.
-- Orange = GitHub Pages, Dropbox (HA backups only), Nabu Casa, Proton.
-- Next inputs: search/browser, password manager, maps, photos, other SaaS.
+- Orange = GitHub Pages, Dropbox (backups only), Nabu Casa, Proton.
+- Next: search/browser, password manager, maps, photos, other SaaS.
