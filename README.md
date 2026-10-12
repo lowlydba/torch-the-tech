@@ -329,9 +329,7 @@ flowchart TB
             bing[Bing search<br/>paid via Rewards]
         end
 
-        subgraph ddg["DuckDuckGo"]
-            ddgs[Private search<br/>planned]
-        end
+        ddgs[DuckDuckGo]
 
         subgraph salesforce["Salesforce"]
             slack[Slack<br/>personal chat]
@@ -375,7 +373,6 @@ flowchart TB
     style bitwarden fill:#fff3dc,stroke:#d98200,color:#222
     style brave fill:#fff3dc,stroke:#d98200,color:#222
     style msft fill:#fff0f0,stroke:#c33,color:#222
-    style ddg fill:#fff3dc,stroke:#d98200,stroke-dasharray: 5 3,color:#222
     style ddgs stroke-dasharray: 5 3
     style salesforce fill:#fff0f0,stroke:#c33,color:#222
     style tbd fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
