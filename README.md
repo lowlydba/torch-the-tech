@@ -254,6 +254,11 @@ flowchart TB
             brave_m[Brave mobile]
         end
 
+        subgraph tbd["Messaging"]
+            direction TB
+            chatrep[Replacement TBD]
+        end
+
         subgraph h_desktop["Desktop"]
             direction TB
             chrome[Chrome desktop]
@@ -303,10 +308,6 @@ flowchart TB
 
         subgraph salesforce["Salesforce"]
             slack[Slack<br/>personal chat]
-        end
-
-        subgraph tbd["Messaging replacement"]
-            chatrep[TBD]
         end
     end
 
