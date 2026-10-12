@@ -80,7 +80,7 @@ flowchart TB
             direction TB
             frame[[Smart TV]]
             plex[Plex + Plexamp<br/>music server]
-            switch2[[Nintendo Switch 2<br/>on wifi]]
+            switch2[[Nintendo Switch 2]]
         end
 
         subgraph h_reading["Reading"]
