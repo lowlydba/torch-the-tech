@@ -329,6 +329,10 @@ flowchart TB
             bing[Bing search<br/>paid via Rewards]
         end
 
+        subgraph ddg["DuckDuckGo"]
+            ddgs[Private search<br/>planned]
+        end
+
         subgraph salesforce["Salesforce"]
             slack[Slack<br/>personal chat]
         end
@@ -341,6 +345,7 @@ flowchart TB
     pihole --> bitwarden
     pihole --> brave
     pihole --> msft
+    pihole -.-> ddg
     pihole ==> salesforce
 
     pixel -. "on cellular: bypasses filter" .-> fi
@@ -348,6 +353,7 @@ flowchart TB
     gcal -. "mid-migration" .-> pcal
     gphotos -. "mid-migration" .-> gallery
     slack -. "replacement undecided" .-> chatrep
+    bing -. "replacing with, planned" .-> ddgs
 
     classDef big fill:#fdd,stroke:#c33,color:#400
     classDef self fill:#dfd,stroke:#3a3,color:#040
@@ -356,7 +362,7 @@ flowchart TB
     classDef gone fill:#eee,stroke:#999,stroke-dasharray: 2 4,color:#777
     class gmail,gcal,gapps,fi,gphotos,chrome,bing,slack big
     class chatrep gone
-    class pmail,pcal,bw,bravecloud,brave_m hosted
+    class pmail,pcal,bw,bravecloud,brave_m,ddgs hosted
     class gallery self
     class pixel big
     class pihole gate
@@ -371,6 +377,8 @@ flowchart TB
     style bitwarden fill:#fff3dc,stroke:#d98200,color:#222
     style brave fill:#fff3dc,stroke:#d98200,color:#222
     style msft fill:#fff0f0,stroke:#c33,color:#222
+    style ddg fill:#fff3dc,stroke:#d98200,stroke-dasharray: 5 3,color:#222
+    style ddgs stroke-dasharray: 5 3
     style salesforce fill:#fff0f0,stroke:#c33,color:#222
     style tbd fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
     style g_photos fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
@@ -455,6 +463,7 @@ Providers and tools in the charts above that I trust and recommend.
 - [Proton](https://proton.me): Mail, Calendar, [Lumo AI](https://lumo.proton.me)
 - [Bitwarden](https://bitwarden.com): open source password manager
 - [Brave](https://brave.com): privacy-focused browser
+- [DuckDuckGo](https://duckduckgo.com): private search
 - [Nabu Casa](https://www.nabucasa.com): funds Home Assistant development
 - [GitHub Pages](https://pages.github.com): static hosting
 
