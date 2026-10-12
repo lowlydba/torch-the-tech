@@ -15,6 +15,13 @@ Three charts by domain. In each, my home is on top, a DNS filter sits in front o
 ```mermaid
 ---
 title: "Media and reading: TV, streaming, music, RSS"
+config:
+  theme: base
+  themeVariables:
+    textColor: '#222222'
+    titleColor: '#222222'
+    edgeLabelBackground: '#ffffff'
+    lineColor: '#555555'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
@@ -88,17 +95,17 @@ flowchart TB
     class pihole gate
     class feedly gone
     class blocked note
-    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px
-    style out fill:#fffafa,stroke:#c33,stroke-width:2px
-    style h_media fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3
-    style h_reading fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3
-    style retired fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4
-    style offline fill:#e6fff0,stroke:#0a8a3a,stroke-width:4px
-    style samsung fill:#fff0f0,stroke:#c33
-    style netflix fill:#fff0f0,stroke:#c33
+    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
+    style out fill:#fffafa,stroke:#c33,stroke-width:2px,color:#222
+    style h_media fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style h_reading fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style retired fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
+    style offline fill:#e6fff0,stroke:#0a8a3a,stroke-width:4px,color:#222
+    style samsung fill:#fff0f0,stroke:#c33,color:#222
+    style netflix fill:#fff0f0,stroke:#c33,color:#222
     style hbo stroke-dasharray: 5 3
-    style plexinc fill:#fff0f0,stroke:#c33
-    style github fill:#fff3dc,stroke:#d98200
+    style plexinc fill:#fff0f0,stroke:#c33,color:#222
+    style github fill:#fff3dc,stroke:#d98200,color:#222
 ```
 
 ## 2. Smart home and files
@@ -106,6 +113,13 @@ flowchart TB
 ```mermaid
 ---
 title: "Smart home and files: Home Assistant, IoT, sync, backups"
+config:
+  theme: base
+  themeVariables:
+    textColor: '#222222'
+    titleColor: '#222222'
+    edgeLabelBackground: '#ffffff'
+    lineColor: '#555555'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
@@ -160,13 +174,13 @@ flowchart TB
     class nabucloud,dbx hosted
     class ha,iot_l,iot_c,resilio self
     class pihole gate
-    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px
-    style out fill:#fffafa,stroke:#c33,stroke-width:2px
-    style h_smart fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3
-    style h_files fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3
-    style vendors fill:#fff0f0,stroke:#c33
-    style nabu fill:#fff3dc,stroke:#d98200
-    style dropbox fill:#fff3dc,stroke:#d98200
+    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
+    style out fill:#fffafa,stroke:#c33,stroke-width:2px,color:#222
+    style h_smart fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style h_files fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style vendors fill:#fff0f0,stroke:#c33,color:#222
+    style nabu fill:#fff3dc,stroke:#d98200,color:#222
+    style dropbox fill:#fff3dc,stroke:#d98200,color:#222
 ```
 
 ## 3. Personal admin and mobile
@@ -174,6 +188,13 @@ flowchart TB
 ```mermaid
 ---
 title: "Personal admin and mobile: email, calendar, phone, carrier"
+config:
+  theme: base
+  themeVariables:
+    textColor: '#222222'
+    titleColor: '#222222'
+    edgeLabelBackground: '#ffffff'
+    lineColor: '#555555'
 ---
 flowchart TB
     subgraph home["MY HOME NETWORK"]
@@ -227,13 +248,13 @@ flowchart TB
     class pmail,pcal hosted
     class pixel big
     class pihole gate
-    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px
-    style out fill:#fffafa,stroke:#c33,stroke-width:2px
-    style h_mobile fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3
-    style google fill:#fff0f0,stroke:#c33
-    style g_admin fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3
-    style g_mobile fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3
-    style proton fill:#fff3dc,stroke:#d98200
+    style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
+    style out fill:#fffafa,stroke:#c33,stroke-width:2px,color:#222
+    style h_mobile fill:#e8f8e8,stroke:#3a3,stroke-dasharray: 5 3,color:#222
+    style google fill:#fff0f0,stroke:#c33,color:#222
+    style g_admin fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
+    style g_mobile fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
+    style proton fill:#fff3dc,stroke:#d98200,color:#222
 ```
 
 ## Notes
