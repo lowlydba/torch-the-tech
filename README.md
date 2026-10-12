@@ -468,7 +468,7 @@ Providers and tools in the charts above that I trust and recommend.
 - [Pi-hole](https://pi-hole.net): network-wide DNS filtering
 - [Resilio Sync](https://www.resilio.com/sync/): peer-to-peer file sync
 - [Plex](https://www.plex.tv) and [Plexamp](https://www.plex.tv/plexamp/): music server and player
-- [LiveBoat](https://github.com/lowlydba/liveboat): RSS reader on GitHub Pages
+- [LiveBoat](https://github.com/exaroth/liveboat): RSS reader on GitHub Pages
 
 ---
 
