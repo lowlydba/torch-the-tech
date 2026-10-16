@@ -287,8 +287,12 @@ flowchart TB
 
         subgraph h_desktop["Desktop"]
             direction TB
-            chrome[Chrome desktop]
+            brave_d[Brave desktop]
         end
+    end
+
+    subgraph retired["RETIRED: no traffic"]
+        chrome[<s>Chrome desktop</s><br/>fully replaced]
     end
 
     pihole[[Pi-hole<br/>DNS filter]]
@@ -351,6 +355,7 @@ flowchart TB
     gmail -. "mid-migration" .-> pmail
     gcal -. "mid-migration" .-> pcal
     gphotos -. "mid-migration" .-> gallery
+    chrome == "100% migrated" ==> brave_d
     slack -. "replacement undecided" .-> chatrep
     bing -. "replacing with, planned" .-> ddgs
 
@@ -359,9 +364,9 @@ flowchart TB
     classDef gate fill:#cdf,stroke:#36c,stroke-width:3px,color:#014
     classDef hosted fill:#ffe6b8,stroke:#d98200,color:#5a3300
     classDef gone fill:#eee,stroke:#999,stroke-dasharray: 2 4,color:#777
-    class gmail,gcal,gapps,fi,gphotos,chrome,bing,slack big
-    class chatrep gone
-    class pmail,pcal,bw,bravecloud,brave_m,ddgs hosted
+    class gmail,gcal,gapps,fi,gphotos,bing,slack big
+    class chatrep,chrome gone
+    class pmail,pcal,bw,bravecloud,brave_m,brave_d,ddgs hosted
     class gallery self
     class pixel big
     class pihole gate
@@ -378,6 +383,7 @@ flowchart TB
     style msft fill:#fff0f0,stroke:#c33,color:#222
     style ddgs stroke-dasharray: 5 3
     style salesforce fill:#fff0f0,stroke:#c33,color:#222
+    style retired fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
     style tbd fill:#f6f6f6,stroke:#999,stroke-dasharray: 2 4,color:#222
     style g_photos fill:#ffe0e0,stroke:#c33,stroke-dasharray: 5 3,color:#222
 ```
