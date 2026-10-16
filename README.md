@@ -92,6 +92,7 @@ flowchart TB
     subgraph retired["RETIRED / RETIRING: no traffic"]
         feedly[<s>Feedly</s><br/>fully replaced]
         hbo[HBO Max<br/>ending]
+        gmusic[<s>Google Music</s><br/>fully replaced]
     end
 
     subgraph offline["OFF THE NETWORK"]
@@ -128,6 +129,7 @@ flowchart TB
     end
 
     feedly == "100% migrated" ==> liveboat
+    gmusic == "100% migrated" ==> plex
     hbo -. "replacing with" .-> bluray
 
     h_media ==> pihole
@@ -150,7 +152,7 @@ flowchart TB
     class frame big
     class plex,liveboat,bluray,snes,soundbar self
     class pihole gate
-    class feedly gone
+    class feedly,gmusic gone
     class blocked note
     style home fill:#f4fff4,stroke:#3a3,stroke-width:2px,color:#222
     style out fill:#fffafa,stroke:#c33,stroke-width:2px,color:#222
